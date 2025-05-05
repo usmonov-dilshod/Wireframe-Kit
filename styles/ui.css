@@ -1,0 +1,72 @@
+.container {
+  max-width: 1204px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.button {
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 16px 24px;
+  border-radius: var(--rounded-full);
+  transition-duration: 0.15s;
+}
+
+.button-primary {
+  background: rgb(var(--blue));
+  color: rgb(var(--white));
+  transition-property: background;
+}
+
+.button-primary:hover {
+  background: rgb(var(--blue) / 0.9);
+}
+
+.button-outline {
+  border: 2px solid rgb(var(--blue));
+  transition-property: background, color;
+}
+
+.button-outline:hover {
+  background: rgb(var(--blue));
+  color: rgb(var(--white));
+}
+
+.button-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.15s;
+}
+
+.section-content {
+  padding: 120px 0;
+  border-top: 2px solid rgb(var(--blue));
+}
+
+.input {
+  height: 56px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 16px 24px;
+  border: 2px solid rgb(var(--blue));
+  border-radius: var(--rounded-full);
+}
+
+.button:focus-visible,
+.button-icon:focus-visible,
+.input:focus-visible {
+  outline: 2px solid rgb(var(--pale-blue));
+  outline-offset: 2px;
+}
