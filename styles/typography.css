@@ -1,0 +1,68 @@
+.heading-2xl {
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 84px;
+}
+
+.heading-xl {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 68px;
+}
+
+.heading-lg {
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 58px;
+}
+
+.heading-md {
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 46px;
+}
+
+.heading-sm {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.heading-xs {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  transition-property: background, color;
+  transition-duration: 0.15s;
+}
+
+.link:hover {
+  background: rgb(var(--blue));
+  color: rgb(var(--white));
+}
+
+.paragraph-lg {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.paragraph-md {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.paragraph-sm {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}

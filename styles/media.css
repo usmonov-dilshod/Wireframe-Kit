@@ -1,0 +1,130 @@
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header__content {
+    grid-template-columns: auto 1fr;
+  }
+
+  .header__logo-link span {
+    display: none;
+  }
+
+  .header__menu-button {
+    display: inline-flex;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 100%;
+    background: rgb(var(--white));
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 50;
+    margin: 0;
+    padding: 16px;
+    transition-property: left;
+    transition-duration: 0.15s;
+  }
+
+  .header__content:has(.header__menu-button:focus) .navbar {
+    left: 0;
+  }
+
+  .navbar__routes-list {
+    flex-direction: column;
+  }
+
+  .navbar__socials-list {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .section__one,
+  .section-content {
+    padding: 40px 0;
+  }
+
+  .section__two-block {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section__two-block:last-child {
+    margin-top: 24px;
+  }
+
+  .section__two-image,
+  .section__two-video {
+    height: 240px;
+  }
+
+  .section__two-video {
+    grid-row: 1/2;
+  }
+
+  .section__three-content {
+    grid-template-columns: 1fr;
+  }
+
+  .section__three-block {
+    text-align: center;
+  }
+
+  .section__five-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer__content {
+    flex-direction: column-reverse;
+    padding: 48px 0;
+  }
+
+  .footer__company-links {
+    flex-direction: column;
+  }
+
+  .footer__company-links,
+  .footer__company-form {
+    justify-content: center;
+  }
+
+  .footer__sitemap {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heading-xl {
+    font-size: 42px;
+    line-height: 46px;
+  }
+
+  .section__five-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__sitemap {
+    display: none;
+  }
+
+  .footer__company-links {
+    flex-direction: column;
+  }
+
+  .footer__company-logo {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .footer__company-form {
+    display: none;
+  }
+}
