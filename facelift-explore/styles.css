@@ -38,6 +38,9 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
   .filter{grid-column:span 4}
 }
 
+.@media(max-width:480px){
+}
+
 .results{max-width:1120px;margin:22px auto;padding:0 20px}
 .results-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .results h2{margin:0}
@@ -71,3 +74,61 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,C
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 ::selection{background:rgba(122,162,247,.35)}
+
+/* Responsive: phones */
+@media(max-width:480px){
+  .header-inner{padding:10px 14px}
+  .nav-link{padding:6px 8px}
+  .hero-inner{padding:24px 14px 16px}
+  .hero h1{font-size:24px}
+  .hero-sub{font-size:14px}
+  .search{flex-direction:column}
+  .btn{width:100%}
+  .filters{margin:14px auto;padding:0 14px}
+  .filters-grid{gap:10px;padding:10px}
+  .results{margin:18px auto;padding:0 14px}
+  .cards{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+  .card-media{height:120px}
+  .modal-dialog{width:96vw;max-height:80vh}
+}
+
+/* Responsive: small tablets */
+@media(min-width:481px) and (max-width:719px){
+  .filters-grid{grid-template-columns:repeat(12,1fr)}
+  .filter{grid-column:span 6}
+}
+
+/* Responsive: tablets and up */
+@media(min-width:720px) and (max-width:1023px){
+  .cards{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+}
+
+/* Responsive: desktops */
+@media(min-width:1024px){
+  .hero-inner{padding:44px 20px 24px}
+  .card-media{height:160px}
+  .cards{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+}
+
+/* Wide screens */
+@media(min-width:1280px){
+  .header-inner,.hero-inner,.filters,.results,.about{max-width:1280px}
+}
+
+/* Orientation tweaks (affects 3D page canvas too via id selector) */
+@media(orientation:portrait){
+  #scene{height:min(60vh,640px)}
+}
+@media(orientation:landscape){
+  #scene{height:min(70vh,720px)}
+}
+
+/* Hover-capable devices */
+@media(hover:hover){
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.45)}
+}
+
+/* Reduced motion accessibility */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
