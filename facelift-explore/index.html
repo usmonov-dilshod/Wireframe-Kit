@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Facelift Explore — Техники подтяжки лица</title>
+    <meta name="description" content="Интерактивный каталог техник подтяжки лица: поиск, фильтры, подробные описания и сравнение методов.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="./icons/face.svg" alt="" class="brand-icon" aria-hidden="true">
+          <span class="brand-name">Facelift Explore</span>
+        </div>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="#techniques" class="nav-link">Техники</a>
+          <a href="#about" class="nav-link">О проекте</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <h1 id="hero-title">Исследуйте техники подтяжки лица</h1>
+          <p class="hero-sub">Поиск, фильтрация и подробные описания хирургических и малоинвазивных методик.</p>
+          <form id="search-form" class="search" role="search" aria-label="Поиск техник">
+            <label for="search-input" class="visually-hidden">Поиск по названию или ключевым словам</label>
+            <input id="search-input" name="q" type="search" placeholder="Найти: SMAS, эндоскопическая, нити..." autocomplete="off">
+            <button type="submit" class="btn">Найти</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="filters" class="filters" aria-labelledby="filters-title">
+        <h2 id="filters-title">Фильтры</h2>
+        <div class="filters-grid">
+          <div class="filter">
+            <label for="type-select">Тип</label>
+            <select id="type-select">
+              <option value="">Все</option>
+              <option value="surgical">Хирургические</option>
+              <option value="minimally_invasive">Малоинвазивные</option>
+              <option value="non_surgical">Безоперационные</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="area-select">Зона</label>
+            <select id="area-select">
+              <option value="">Все</option>
+              <option value="forehead">Лоб/брови</option>
+              <option value="midface">Средняя зона</option>
+              <option value="lower_face">Нижняя треть</option>
+              <option value="neck">Шея</option>
+            </select>
+          </div>
+          <div class="filter">
+            <label for="downtime-range">Восстановление (дней)</label>
+            <input id="downtime-range" type="range" min="0" max="30" value="30">
+            <output id="downtime-output">≤ 30</output>
+          </div>
+          <div class="filter">
+            <label for="duration-range">Длительность эффекта (лет)</label>
+            <input id="duration-range" type="range" min="0" max="10" value="10">
+            <output id="duration-output">≥ 0</output>
+          </div>
+          <div class="filter">
+            <label for="anesthesia-select">Анестезия</label>
+            <select id="anesthesia-select">
+              <option value="">Любая</option>
+              <option value="local">Местная</option>
+              <option value="sedation">Седация</option>
+              <option value="general">Общая</option>
+            </select>
+          </div>
+        </div>
+        <div class="filters-actions">
+          <button id="reset-filters" class="btn btn-secondary" type="button">Сбросить</button>
+        </div>
+      </section>
+
+      <section id="techniques" class="results" aria-labelledby="results-title">
+        <div class="results-head">
+          <h2 id="results-title">Техники</h2>
+          <div id="results-count" aria-live="polite" class="count"></div>
+        </div>
+        <div id="cards" class="cards" role="list" aria-label="Список техник"></div>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-title">
+        <h2 id="about-title">О проекте</h2>
+        <p>Независимый образовательный проект об эстетической хирургии и косметологии. Данные носят информационный характер и не заменяют консультацию врача.</p>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog" role="document">
+        <button class="modal-close" aria-label="Закрыть" data-close>&times;</button>
+        <div class="modal-content">
+          <header class="modal-header">
+            <h3 id="modal-title"></h3>
+            <div id="modal-badges" class="badges"></div>
+          </header>
+          <div id="modal-desc" class="modal-body"></div>
+          <footer class="modal-footer">
+            <button class="btn btn-secondary" data-close>Закрыть</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <article class="card" role="listitem">
+        <button class="card-click" aria-label="Подробнее"></button>
+        <div class="card-media" aria-hidden="true"></div>
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <p class="card-sub"></p>
+          <div class="pill-row"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
