@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Анимация — Deep Plane Facelift</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+      .anim-wrap{max-width:1120px;margin:18px auto;padding:0 20px}
+      .stagebar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+      .stage{padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:var(--panel-2);color:var(--muted);font-size:12px}
+      .stage.active{background:var(--brand);color:#0b0f17;border-color:transparent}
+      .canvas-box{position:relative;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,var(--panel),var(--panel-2))}
+      #scene{display:block;width:100%;height:min(70vh,720px)}
+      .controls{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:12px}
+      .left-controls{display:flex;gap:8px;align-items:center}
+      .right-controls{display:flex;gap:8px;align-items:center}
+      .legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+      .swatch{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px}
+      .note{color:var(--muted);font-size:14px;margin-top:8px}
+      .back-link{display:inline-block;margin:12px 0;color:var(--brand);text-decoration:none}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="./icons/face.svg" alt="" class="brand-icon" aria-hidden="true">
+          <span class="brand-name">Facelift Explore</span>
+        </div>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="./index.html#techniques" class="nav-link">Техники</a>
+          <a href="./index.html#about" class="nav-link">О проекте</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="anim-wrap">
+      <a class="back-link" href="./index.html">← Назад</a>
+      <h1 style="margin:6px 0 6px">3D анимация: Deep-plane rhytidectomy (по Hamra)</h1>
+      <p class="hero-sub">Этапы диссекции и подвески композитного лоскута с вертикально-обlique вектором.</p>
+
+      <div class="stagebar" id="stagebar" aria-label="Этапы операции"></div>
+
+      <div class="canvas-box">
+        <canvas id="scene" aria-label="3D сцена с анимацией этапов"></canvas>
+      </div>
+
+      <div class="controls">
+        <div class="left-controls">
+          <button id="prev" class="btn btn-secondary" type="button">Назад</button>
+          <button id="play" class="btn" type="button">Пуск</button>
+          <button id="next" class="btn btn-secondary" type="button">Дальше</button>
+        </div>
+        <div class="right-controls legend">
+          <span><span class="swatch" style="background:#e7c9a9"></span>Кожа</span>
+          <span><span class="swatch" style="background:#c77d7d"></span>SMAS/мышцы</span>
+          <span><span class="swatch" style="background:#86b6ff"></span>Зона диссекции</span>
+          <span><span class="swatch" style="background:#8bd5ca"></span>Вектор подвески</span>
+        </div>
+      </div>
+
+      <p class="note">Модель условная и образовательная: слои и векторы схематичны, чтобы подчеркнуть ключевые принципы безопасности и манёвры, описанные в тексте.</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
+    <script src="./animation.js" defer></script>
+  </body>
+  </html>
+
